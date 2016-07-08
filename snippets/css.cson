@@ -1,0 +1,12 @@
+'.text.html.basic, .text.html, .text.html .meta.scope.between-tag-pair, .text.html .punctuation.tag.begin':
+  'div.class':
+    'prefix': 'dc'
+    'body': '<div class="$1">$0</div>'
+    
+  'div#id':
+    'prefix': 'di'
+    'body': '<div id="$1">$0</div>'    
+    
+  'html:5':
+    'prefix': 'html5'
+    'body': '<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset="UTF-8">\n\t<title>2</title>\n</head>\n<body>\n\t$0\n</body>\n</html>'  

@@ -1,0 +1,77 @@
+'.text.html.basic, .text.html, .text.html .meta.scope.between-tag-pair, .text.html .punctuation.tag.begin':
+
+  'tag form':
+    'prefix': 'form'
+    'body': '<form method="post" action="">\n\t${0}\n</form>'
+
+  'tag label':
+    'prefix': 'label'
+    'body': '<label>${0}</label>'
+
+  'tag label for':
+    'prefix': 'labelfor'
+    'body': '<label for="${1}">${0}</label>'
+
+  'input:text':
+    'prefix': 'text'
+    'body': '<input type="text" value="" />'
+    
+  'input:password':
+    'prefix': 'password'
+    'body': '<input type="password" value="" />'
+
+  'input:password -alias':
+    'prefix': 'pwd'
+    'body': '<input type="password" value="" />'
+
+  'input:checkbox':
+    'prefix': 'checkbox'
+    'body': '<input type="checkbox" value="" />'
+
+  'input:radio':
+    'prefix': 'radio'
+    'body': '<input type="radio" value="" />'
+  
+  'tag select':
+    'prefix': 'select'
+    'body': '<select name="">${0}</select>'
+  
+  'tag select option':
+    'prefix': 'sel'
+    'body': '<select name="">\n\t<option value="">${0}</option>\n\t<option value=""></option>\n</select>'
+
+  'tag option':
+    'prefix': 'option'
+    'body': '<option value="">${1}</option>${0}'
+
+  'tag textarea':
+    'prefix': 'textarea'
+    'body': '<textarea name="" rows="" cols="" class="ta"></textarea>'
+
+  'tag textarea -alias':
+    'prefix': 'ta'
+    'body': '<textarea name="" rows="" cols="" class="ta"></textarea>'
+
+  'tag submit':
+    'prefix': 'submit'
+    'body': '<input type="submit" value="${1}" class="submit"/>${1}'
+
+  'button.class':
+    'prefix': 'buttonc'
+    'body': '<button class="${1}">${0}</button>'
+
+  'button#id':
+    'prefix': 'buttonid'
+    'body': '<button id="${1}">${0}</button>'
+
+  'form hidden':
+    'prefix': 'hidden'
+    'body': '<input type="hidden" value="${1}" />${0}'
+
+  'form hidden#id':
+    'prefix': 'hiddenid'
+    'body': '<input type="hidden" value="" id="${1}" />${0}'
+
+  'tag fieldset legend':
+    'prefix': 'fieldset'
+    'body': '<fieldset>\n\t<legend>Title</legend>\n</fieldset>'

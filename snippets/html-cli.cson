@@ -1,0 +1,13 @@
+'.text.html.basic, .text.html, .text.html .meta.scope.between-tag-pair, .text.html .punctuation.tag.begin':
+  
+  'html53':
+    'prefix': 'html53'
+    'body': 'html:5>#wrapper>((header>((#logo>img)+h1+nav>ul>li*3))+(#body>header>h2+p)+(footer>p))*1'
+   
+  '3row 2col':
+    'prefix': '32'
+    'body': '<style>\n*{padding:0;margin:0;}\nbody{font-size:18px;font-family:Arial;background:#fff;line-height:1.5;}\n.container{width:960px;margin:0 auto;}\n.header{height:100px;position:relative;background:#00f}\n.content{}\n.sidebar{float:left; background:#f00;width:30%;}\n.main{float:left;background:#ff0;width:70%;}\n.clear{clear:both;}\n.footer{height:80px;background:#4067ad;}\n</style>\n<div class="container">\n\t<div class="header">Header</div>\n\t<div class="content">\n\t\t<div class="sidebar">Sidebar</div>\n\t\t<div class="main">Main</div>\n\t\t<div class="clear"></div>\n\t</div>\n\t<div class="footer">Footer</div>\n</div>'
+
+  'ccie6':
+    'prefix': 'ccie6'
+    'body': '<!--[if IE 6]>\n\t${0}\n<![endif]-->'
