@@ -1,11 +1,10 @@
 {
   "name": "atom-hat-fe",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Hat's FE Snippets",
   "keywords": [
-  	"snippets"
+    "snippets"
   ],
-
   "repository": "https://github.com/hattoriheiji/atom-hat-fe",
   "license": "MIT",
   "engines": {
