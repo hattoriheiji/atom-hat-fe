@@ -2,24 +2,31 @@
 
   "console.log - var":
     prefix: 'clog'
-    body: "console.log(${0})"
+    body: "console.log($0)"
 
   "console.log - string":
     prefix: 'clog2'
-    body: "console.log('${0}')"
+    body: "console.log('$0')"
 
   "console.error":
     prefix: "ce"
-    body: "console.error(${0});"
+    body: "console.error($0);"
 
   "console.error - alias":
     prefix: "cerror"
-    body: "console.error(${0});"
+    body: "console.error($0);"
 
   "console.warn":
     prefix: "cw"
-    body: "console.warn(${0});"
+    body: "console.warn($0);"
 
   "console.warn alias":
     prefix: "cwarn"
-    body: "console.warn(${0});"
+    body: "console.warn($0);"
+  
+  "alert('v')":
+    prefix: "aa"
+    body: "alert('$1');$0"
+  "alert(v)":
+    prefix: "aa2"
+    body: "alert($1);$0"

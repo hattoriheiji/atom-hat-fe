@@ -1,0 +1,125 @@
+".source.js":
+  "$('[data-hid]')":
+    prefix: "sd"
+    body: "$('[data-hid="$1"]').$0"
+  "$('#id')":
+    prefix: "sid"
+    body: "$('#$1').$0"
+  "$('.class')":
+    prefix: "sc"
+    body: "$('.$1').$0"
+  "$('.class') 2":
+    prefix: "sc1"
+    body: "$('.$1').$0"
+  "$('tag')":
+    prefix: "stag"
+    body: "$('$1').$0"
+  "$(this)":
+    prefix: "sth"
+    body: "$(this).$0"
+  "$($1)":
+    prefix: "ss"
+    body: "$($1).$0"
+  "removeClass()":
+    prefix: "rmc"
+    body: "removeClass('$1')$0"
+  "addClass()":
+    prefix: "addc"
+    body: "addClass('$1')$0"
+  "removeAttr()":
+    prefix: "rma"
+    body: "removeAttr($1)$0"
+  "toggleClass()":
+    prefix: "tgc"
+    body: "toggleClass('$1')$0"
+  "siblings()":
+    prefix: "sb"
+    body: "siblings('$1')$0"
+  "siblings() 2":
+    prefix: "sb1"
+    body: "siblings('$1')$0"
+  "indexthis":
+    prefix: "indexthis"
+    body: "var index = $('$1').index(this);"
+  "attr":
+    prefix: "attr"
+    body: "attr($1)$0"
+  "text":
+    prefix: "text"
+    body: "text($1)$0"
+  "html":
+    prefix: "html"
+    body: "html($1)$0"
+  "val":
+    prefix: "val"
+    body: "val($1)$0"
+  "rd":
+    prefix: "rd"
+    body: """
+    $(function(){
+    \n\t$1
+    \n});
+    """
+  "jq$":
+    prefix: "jq$"
+    body: """
+    jQuery.noConflict(); 
+    \n(function($){ 
+    \n\t$(function(){ 
+    \n\t\t $1
+    \n\t});
+    \n})(jQuery);
+    """
+  "jqs":
+    prefix: "jqs"
+    body: """
+    jQuery.noConflict(); 
+    \n(function($){ 
+    \n\t$(function(){ 
+    \n\t\t $1
+    \n\t});
+    \n})(jQuery);
+    """
+  "jqclick":
+    prefix: "jqclick"
+    body: """
+    click(function(){
+    \n\t$1
+    \n});
+    """
+  "jqclick 2":
+    prefix: "jqc"
+    body: """
+    click(function(){
+    \n\t$1
+    \n});
+    """
+  "aja":
+    prefix: "aja"
+    body: """
+    $.ajax({
+    \n\turl: \'\',
+    \n\tdata:\'\',
+    \n\ttype:\'POST\'
+    \n}).done(function(r){
+    \n
+    \n}).fail(function(r){
+    \n
+    \n);
+    \n
+    """
+  "jqplugin":
+    prefix: "jqplugin"
+    body: """
+    (function($){
+    \n\t$.fn.pluginName = function (options) {
+    \n\t\tvar defaults = {
+    \n
+    \n\t\t};
+    \n\t\toptions = $.extend(defaults, options);
+    \n\t\treturn this.each(function () {
+    \n\t\t\tvar obj = $(this);
+    \n\t\t});
+    \n\t};
+    \n})(jQuery);
+    """

@@ -50,3 +50,10 @@
   "Object.assign":
     prefix: "a"
     body: "Object.assign(${1:dest}, ${2:source})"
+
+  "Object.ppt":
+    prefix: "ppt"
+    body: "prototype"
+  "Object.constructor":
+    prefix: "cons"
+    body: "constructor"

@@ -1,0 +1,10 @@
+".source.js":
+  "use strict":
+    prefix: "us"
+    body: "'use strict';"
+  "parseInt()":
+    prefix: "pi"
+    body: "parseInt()"
+  "parseFloat()":
+    prefix: "pf"
+    body: "parseFloat()" 

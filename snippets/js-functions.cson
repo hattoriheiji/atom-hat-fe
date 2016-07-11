@@ -2,12 +2,51 @@
   "anonymous function":
     prefix: "f"
     body: "(${1:args}) => {${0}}"
-  "named function":
-    prefix: "fn"
+  "callback noname function":
+    prefix: "fun"
     body: """
-    function ${1:name}(${2:args}) {
+    function () {
     \t${0}
     }
+    """
+  "named function":
+    prefix: "fu"
+    body: """
+    function $1() {
+    \t${0}
+    }
+    """
+  "afu3":
+    prefix: "func"
+    body: """
+    (function(){
+    \n\t$1
+    })();
+    """
+  "afu":
+    prefix: "afu"
+    body: """
+    (function(){
+    \n\t$1
+    \n})();
+    """
+  "afu2":
+    prefix: "afu2"
+    body: """
+    (function(_i){
+    \n\tz_li[_i].onclick = function () {
+    \n\t\talert(_i);
+    \n\t}
+    \n})(i);
+    """
+  "afuclosure":
+    prefix: "afuclosure"
+    body: """
+    (function(_i){
+    \n\tz_li[_i].onclick = function () {
+    \n\t\talert(_i);
+    \n\t}
+    \n})(i);
     """
   "immediately-invoked function expression":
     prefix: "iife"

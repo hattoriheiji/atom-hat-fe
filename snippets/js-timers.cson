@@ -2,16 +2,26 @@
   "setTimeout":
     prefix: "sett"
     body: """
-    setTimeout(() => {
+    setTimeout(function(){
     \t${0}
-    }, ${1:delay});
+    }, 1000);
+    """
+  "clearTimeout":
+    prefix: "cleart"
+    body: """
+    clearTimeout(id);
+    """
+  "clearInterval":
+    prefix: "cleari"
+    body: """
+    clearInterval(id);
     """
   "setInterval":
     prefix: "seti"
     body: """
-    setInterval(() => {
+    setInterval(function(){
     \t${0}
-    }, ${1:delay});
+    }, 1000);
     """
   "setImmediate":
     prefix: "sim"

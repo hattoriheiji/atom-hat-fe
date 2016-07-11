@@ -2,39 +2,37 @@
   "if statement":
     prefix: "if"
     body: """
-    if (${1:condition}) {
-    \t${2}
+    if ($1) {
+    \t$0
     }
     """
   "else statement":
-    prefix: "el"
+    prefix: "else"
     body: """
     else {
     \t${1}
     }
     """
-  "if/else statement":
-    prefix: "ife"
-    body: """
-    if (${1:condition}) {
-    \t${2}
-    } else {
-    \t${3}
-    }
-    """
-  "else if statement":
-    prefix: "ei"
-    body: """
-    else if (${1:condition}) {
-    \t${2}
-    }
-    """
   "for loop":
-    prefix: "fl"
+    prefix: "for"
     body: """
-    for (let ${1:i} = 0; ${1:i} < ${2:iterable}${3:.length}; ${1:i}++) {
-    \t${4}
-    }
+    for (var i = 0; i < $1.length; i++) {
+    \n\t$0
+    \n}
+    """
+  "for loop j":
+    prefix: "for"
+    body: """
+    for (var j = 0; j < $1.length; j++) {
+    \n\t$0
+    \n}
+    """
+  "for loop k":
+    prefix: "for"
+    body: """
+    for (var k = 0; k < $1.length; k++) {
+    \n\t$0
+    \n}
     """
   "for in loop":
     prefix: "fi"
@@ -45,6 +43,13 @@
     \t}
     }
     """
+  "for in loop 2":
+    prefix: "forin"
+    body: """
+    for (var item in myArray){
+    \n\t$1\t
+    \n}
+    """
   "for of loop":
     prefix: "fo"
     body: """
@@ -53,11 +58,25 @@
     }
     """
   "while loop":
-    prefix: "wl"
+    prefix: "while"
     body: """
-    while (${1:condition}) {
+    while ($1) {
     \t${2}
     }
+    """
+  "switch":
+    prefix: "switch"
+    body: """
+    switch ($1) {
+    \n\tcase label :
+    \n\t\tstatement;
+    \n\t\tbreak;
+    \n\tcase label :
+    \n\t\tstatement;
+    \n\t\tbreak;
+    \n\tdefault :
+    \n\t\tstatement;
+    \n}
     """
   "try/catch":
     prefix: "tc"

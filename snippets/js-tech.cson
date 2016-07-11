@@ -1,0 +1,55 @@
+".source.js":
+  "Mustache":
+    prefix: "mu"
+    body: "Mustache"
+  "Mustache render":
+    prefix: "musr"
+    body: "Mustache.render(\"{{title}} spends {{#calc}}\", view);"
+  "Mustache render 2":
+    prefix: "musr2"
+    body: "Mustache.render(template, {name: \"Luke\"});"
+  
+  "vued":
+    prefix: "vued"
+    body: """
+    Vue.directive(\'^!\', {
+    \n
+    \n});
+    """
+  "vinit":
+    prefix: "vinit"
+    body: """
+    new Vue({
+    \n\tel: \'#element\',
+    \n\tdata: {
+    \n\t\tv-modal: \'\',
+    \n\t\t
+    \n\t},
+    \n\tmethods: {
+    \n\t\tmethod1: function(){
+    \n\t\t},
+    \n
+    \n\t\tmethod2: function(index){
+    \n\t\n\t\t}\t
+    \n\t}
+    \n});
+    """
+  "vueinit":
+    prefix: "vueinit"
+    body: """
+    new Vue({
+    \n\tel: \'#element\',
+    \n\tdata: {
+    \n\t\tv-modal: \'\',
+    \n\t\t
+    \n\t},
+    \n\tmethods: {
+    \n\t\tmethod1: function(){
+    \n\t\t},
+    \n
+    \n\t\tmethod2: function(index){
+    \n\t\n\t\t}\t
+    \n\t}
+    \n});
+    """
+

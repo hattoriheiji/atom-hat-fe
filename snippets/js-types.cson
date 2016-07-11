@@ -2,15 +2,27 @@
   "String":
     prefix: "S"
     body: "String"
+  "string":
+    prefix: "st"
+    body: "string"
   "Number":
     prefix: "N"
     body: "Number"
+  "number":
+    prefix: "nu"
+    body: "number"
   "Object":
     prefix: "O"
     body: "Object"
+  "object":
+    prefix: "ob"
+    body: "ob"
   "Array":
     prefix: "A"
     body: "Array"
+  "array":
+    prefix: "arr"
+    body: "array"
   "Date":
     prefix: "D"
     body: "Date"
@@ -23,3 +35,6 @@
   "instanceof":
     prefix: "iof"
     body: "${1:source} instanceof ${2:Object}"
+  "instanceof 2":
+    prefix: "io"
+    body: "$1 instanceof $2"
