@@ -1,10 +1,10 @@
 '.source.css, .source.scss, .source.css.scss, .source.less, .source.css.less':
   'background':
     'prefix': 'b1'
-    'body': 'background: ${1:#${2:ffffff}};$0'
+    'body': 'background:$1;$0'
   'background #':
     'prefix': 'b'
-    'body': 'background: ${1:#${2:ffffff}};$0'
+    'body': 'background:$1;$0'
   'background img':
     'prefix': 'bg1'
     'body': 'background: url(img/${1}.png) no-repeat;$0'
@@ -49,7 +49,7 @@
     'body': 'background-size: ${1:cover};$0'
   'border':
     'prefix': 'bd'
-    'body': 'border: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+    'body': 'border: 1px solid $1;$0'
   'border-color':
     'prefix': 'borc'
     'body': 'border-color: ${1:#${2:000}};$0'
@@ -61,25 +61,25 @@
     'body': 'border-width: $1px;$0'
   'border-bottom':
     'prefix': 'bdb'
-    'body': 'border-bottom: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+    'body': 'border-bottom: 1px solid $1;$0'
   'border-bottom:0 none':
     'prefix': 'bdbn'
     'body': 'border-bottom:0 none;$0'
   'border-left':
     'prefix': 'bdl'
-    'body': 'border-left: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+    'body': 'border-left: 1px solid $1;$0'
   'border-left:0 none':
     'prefix': 'bln'
     'body': 'border-left:0 none;$0'
   'border-right':
     'prefix': 'bdr'
-    'body': 'border-right: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+    'body': 'border-right: 1px solid $1;$0'
   'border-right:0 none':
     'prefix': 'bdrn'
     'body': 'border-right:0 none;$0'
   'border-top':
     'prefix': 'bdt'
-    'body': 'border-top: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+    'body': 'border-top: 1px solid $1;$0'
   'border-top:0 none;':
     'prefix': 'bdtn'
     'body': 'border-top:0 none;'
@@ -232,10 +232,10 @@
     'body': 'list-style-type: upper-roman;$0'
   'line-height':
     'prefix': 'lh'
-    'body': 'line-height: ${1:${2:1}${3:em}};$0'
+    'body': 'line-height: $1;$0'
   'line-height px':
     'prefix': 'lh2'
-    'body': 'line-height: ${1:${2:1}${3:em}};$0'
+    'body': 'line-height: $1;$0'
   'letter-spacing':
     'prefix': 'lsp'
     'body': 'letter-spacing: $1px;$0'
