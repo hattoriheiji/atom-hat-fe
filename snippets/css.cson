@@ -1,12 +1,471 @@
-'.text.html.basic, .text.html, .text.html .meta.scope.between-tag-pair, .text.html .punctuation.tag.begin':
-  'div.class':
-    'prefix': 'dc'
-    'body': '<div class="$1">$0</div>'
-    
-  'div#id':
-    'prefix': 'di'
-    'body': '<div id="$1">$0</div>'    
-    
-  'html:5':
-    'prefix': 'html5'
-    'body': '<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset="UTF-8">\n\t<title>2</title>\n</head>\n<body>\n\t$0\n</body>\n</html>'  
+'.source.css, .source.scss, .source.css.scss, .source.less, .source.css.less':
+  'background':
+    'prefix': 'b'
+    'body': 'background: ${1:#${2:ffffff}};$0'
+  'background img':
+    'prefix': 'bg1'
+    'body': 'background: url(img/${1}.png) no-repeat;$0'
+  'background image':
+    'prefix': 'bg2'
+    'body': 'background: url(image/${1}.png) no-repeat;$0'
+  'background ../img':
+    'prefix': 'bg3'
+    'body': 'background: url(../img/${1}.png) no-repeat;$0'
+  'background-color':
+    'prefix': 'bgc'
+    'body': 'background-color: ${1:#${2:ffffff}};$0'
+  'background-image':
+    'prefix': 'bgi'
+    'body': 'background-image: ${2:url(\'${1:background.jpg}\')};$0'
+  'background-image (asset-url)':
+    'prefix': 'bgia'
+    'body': 'background-image: ${2:asset-url(\'${1:background.jpg}\')};$0'
+  'background-position':
+    'prefix': 'bgp'
+    'body': 'background-position: ${1:left} ${2:top};$0'
+  'background-repeat':
+    'prefix': 'bgr'
+    'body': 'background-repeat: ${1:repeat};$0'
+  'background-repeat: repeat':
+    'prefix': 'bgrr'
+    'body': 'background-repeat: repeat;$0'
+  'background-repeat: repeat-x':
+    'prefix': 'bgrx'
+    'body': 'background-repeat: repeat-x;$0'
+  'background-repeat: repeat-y':
+    'prefix': 'bgry'
+    'body': 'background-repeat: repeat-y;$0'
+  'background-repeat: no-repeat':
+    'prefix': 'bgrn'
+    'body': 'background-repeat: no-repeat;$0'
+  'background:transparent':
+    'prefix': 'bt'
+    'body': 'background:transparent;$0'
+  'background-size':
+    'prefix': 'bgs'
+    'body': 'background-size: ${1:cover};$0'
+  'border':
+    'prefix': 'bd'
+    'body': 'border: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+  'border-color':
+    'prefix': 'borc'
+    'body': 'border-color: ${1:#${2:000}};$0'
+  'border-style':
+    'prefix': 'bors'
+    'body': 'border-style: ${3:solid};$0'
+  'border-width':
+    'prefix': 'borw'
+    'body': 'border-width: ${1:${2:1}${3:px}};$0'
+  'border-bottom':
+    'prefix': 'bdb'
+    'body': 'border-bottom: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+  'border-bottom:0 none':
+    'prefix': 'bdbn'
+    'body': 'border-bottom:0 none;$0'
+  'border-left':
+    'prefix': 'bdl'
+    'body': 'border-left: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+  'border-left:0 none':
+    'prefix': 'bln'
+    'body': 'border-left:0 none;$0'
+  'border-right':
+    'prefix': 'bdr'
+    'body': 'border-right: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+  'border-right:0 none':
+    'prefix': 'bdrn'
+    'body': 'border-right:0 none;$0'
+  'border-top':
+    'prefix': 'bdt'
+    'body': 'border-top: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
+  'border-top:0 none;':
+    'prefix': 'bdtn'
+    'body': 'border-top:0 none;'
+  'border-radius':
+    'prefix': 'bdrd'
+    'body': 'border-radius: ${1:${2:1}${3:px}};$0'
+  'border-collapse':
+    'prefix': 'bc'
+    'body': 'border-collapse:collapse;$0'
+  'clear':
+    'prefix': 'clear'
+    'body': 'clear: ${1:both};$0'
+  'clear2':
+    'prefix': 'cl'
+    'body': 'clear:both;height:0;line-height:0;font-size:0;'
+  'color':
+    'prefix': 'c'
+    'body': 'color: ${1:#${2:000000}};$0'
+  'content':
+    'prefix': 'con'
+    'body': "content: '$1';$0"
+  'cursor':
+    'prefix': 'cur'
+    'body': 'cursor: ${1:pointer};$0'
+  'cursor: pointer':
+    'prefix': 'cp'
+    'body': 'cursor: pointer;$0'
+  'cursor: default':
+    'prefix': 'curd'
+    'body': 'cursor: default;$0'
+  'cursor: inherit':
+    'prefix': 'curi'
+    'body': 'cursor: inherit;$0'
+  'display':
+    'prefix': 'dis'
+    'body': 'display: ${1:none};$0'
+  'display: block':
+    'prefix': 'db'
+    'body': 'display: block;$0'
+  'display: inline-block':
+    'prefix': 'dinb'
+    'body': 'display: inline-block;$0'
+  'display: none':
+    'prefix': 'dn'
+    'body': 'display: none;$0'
+  'display: flex':
+    'prefix': 'disf'
+    'body': 'display: flex;$0'
+  'fill':
+    'prefix': 'fill'
+    'body': 'fill: ${1:#${2:000000}};$0'
+  'float':
+    'prefix': 'fl'
+    'body': 'float: ${1:left};$0'
+  'float: left':
+    'prefix': 'fll'
+    'body': 'float: left;$0'
+  'float: right':
+    'prefix': 'flr'
+    'body': 'float: right;$0'
+  'float: none':
+    'prefix': 'fln'
+    'body': 'float: none;$0'
+  'font-family: "Micrisoft Yahei"':
+    'prefix': 'ffy'
+    'body': 'font-family: "Micrisoft Yahei";$0'
+  'font-family: monaco':
+    'prefix': 'ffm'
+    'body': 'font-family: monaco;$0'
+  'font-family: Georgia':
+    'prefix': 'ffg'
+    'body': 'font-family: Georgia;$0'
+  'font-family':
+    'prefix': 'ff'
+    'body': 'font-family: ${1:arial};$0'
+  'font-size':
+    'prefix': 'fs'
+    'body': 'font-size: ${1:${2:1}${3:px}};$0'
+  'font-size:12px;':
+    'prefix': 'fs12'
+    'body': 'font-size: 12px;$0'
+  'font-size:14px;':
+    'prefix': 'fs14'
+    'body': 'font-size: 14px;$0'
+  'font-size:16px;':
+    'prefix': 'fs16'
+    'body': 'font-size: 16px;$0'
+  'font-size:18px;':
+    'prefix': 'fs18'
+    'body': 'font-size: 18px;$0'
+  'font-style':
+    'prefix': 'fst'
+    'body': 'font-style: ${1:italic};$0'
+  'font-style: italic':
+    'prefix': 'fsi'
+    'body': 'font-style: italic;$0'
+  'font-style: normal':
+    'prefix': 'fsn'
+    'body': 'font-style: normal;$0'
+  'font-style: bold':
+    'prefix': 'fstb'
+    'body': 'font-style: bold;$0'
+  'font-weight':
+    'prefix': 'fw'
+    'body': 'font-weight: ${1:bold};$0'
+  'font-weight: bold':
+    'prefix': 'fwb'
+    'body': 'font-weight: bold;$0'
+  'font-weight: light':
+    'prefix': 'fwl'
+    'body': 'font-weight: light;$0'
+  'font-weight: normal':
+    'prefix': 'fwn'
+    'body': 'font-weight: normal;$0'
+  'height':
+    'prefix': 'h'
+    'body': 'height: ${1:${2:1}${3:px}};$0'
+  'height %':
+    'prefix': 'hp'
+    'body': 'height: ${1}%;$0'
+  'height: auto':
+    'prefix': 'heia'
+    'body': 'height: auto;$0'
+  'list-style':
+    'prefix': 'ls'
+    'body': 'list-style: ${1:square} ${2:inside} ${4:url(\'${3:list.png}\')};$0'
+  'list-style-type':
+    'prefix': 'list'
+    'body': 'list-style-type: ${1:circle};$0'
+  'list-style-type:none':
+    'prefix': 'lsn'
+    'body': 'list-style-type: none;$0'
+  'list-style-type: circle':
+    'prefix': 'listc'
+    'body': 'list-style-type: circle;$0'
+  'list-style-type: disc':
+    'prefix': 'listd'
+    'body': 'list-style-type: disc;$0'
+  'list-style-type: lower-roman':
+    'prefix': 'listlr'
+    'body': 'list-style-type: lower-roman;$0'
+  'list-style-type: none':
+    'prefix': 'listn'
+    'body': 'list-style-type: none;$0'
+  'list-style-type: square':
+    'prefix': 'lists'
+    'body': 'list-style-type: square;$0'
+  'list-style-type: upper-roman':
+    'prefix': 'listur'
+    'body': 'list-style-type: upper-roman;$0'
+  'line-height':
+    'prefix': 'lh'
+    'body': 'line-height: ${1:${2:1}${3:em}};$0'
+  'line-height px':
+    'prefix': 'lh2'
+    'body': 'line-height: ${1:${2:1}${3:em}};$0'
+  'letter-spacing':
+    'prefix': 'lsp'
+    'body': 'letter-spacing: ${1:${2:1}${3:px}};$0'
+  'letter-spacing: normal':
+    'prefix': 'lsn'
+    'body': 'letter-spacing: normal;$0'
+  'a:link,a:visited':
+    'prefix': 'lv'
+    'body': 'a:link{$1}\na:visited{}$0'
+  'a:link,a:visited,a:hover,a:active':
+    'prefix': 'lvha'
+    'body': 'a:link{$1}\na:visited{}\na:hover{}\na:active{}$0'
+  'a:hover':
+    'prefix': 'ho'
+    'body': 'a:hover{$1}$0'
+  'margin':
+    'prefix': 'mg'
+    'body': 'margin: ${1:${2:1}${3:px}};$0'
+  'margin:auto;':
+    'prefix': 'mga'
+    'body': 'margin: auto;$0'
+  'margin:0 auto;':
+    'prefix': 'mg0a'
+    'body': 'margin:0 auto;$0'
+  'margin:0':
+    'prefix': 'mg0'
+    'body': 'margin: 0;$0'
+  'margin-bottom':
+    'prefix': 'mgb'
+    'body': 'margin-bottom: ${1:${2:1}${3:px}};$0'
+  'margin-left':
+    'prefix': 'mgl'
+    'body': 'margin-left: ${1:${2:1}${3:px}};$0'
+  'margin-right':
+    'prefix': 'mgr'
+    'body': 'margin-right: ${1:${2:1}${3:px}};$0'
+  'margin-top':
+    'prefix': 'mgt'
+    'body': 'margin-top: ${1:${2:1}${3:px}};$0'
+  'margin-bottom:0;':
+    'prefix': 'mgb0'
+    'body': 'margin-bottom:0;$0'
+  'margin-left:0;':
+    'prefix': 'mgl0'
+    'body': 'margin-left:0;$0'
+  'margin-right:0;':
+    'prefix': 'mgr0'
+    'body': 'margin-right:0;$0'
+  'margin-top:0;':
+    'prefix': 'mgt0'
+    'body': 'margin-top:0;$0'
+  'min-height':
+    'prefix': 'mh'
+    'body': 'min-height: ${1:${2:1}${3:px}};$0'
+  'min-width':
+    'prefix': 'mw'
+    'body': 'min-width: ${1:${2:1}${3:px}};$0'
+  'overflow':
+    'prefix': 'ov'
+    'body': 'overflow: ${1:hidden};$0'
+  'outline':
+    'prefix': 'outline'
+    'body': 'outline: 1px solid #f00;$0'
+  'overflow: auto':
+    'prefix': 'oa'
+    'body': 'overflow: auto;$0'
+  'overflow: hidden':
+    'prefix': 'oh'
+    'body': 'overflow: hidden;$0'
+  'overflow: scroll':
+    'prefix': 'ovs'
+    'body': 'overflow: scroll;$0'
+  'overflow: visible':
+    'prefix': 'ovv'
+    'body': 'overflow: visible;$0'
+  'padding':
+    'prefix': 'pd'
+    'body': 'padding: ${1:${2:1}${3:px}};$0'
+  'padding-bottom':
+    'prefix': 'pdb'
+    'body': 'padding-bottom: ${1:${2:1}${3:px}};$0'
+  'padding-left':
+    'prefix': 'pdl'
+    'body': 'padding-left: ${1:${2:1}${3:px}};$0'
+  'padding-right':
+    'prefix': 'pdr'
+    'body': 'padding-right: ${1:${2:1}${3:px}};$0'
+  'padding-top':
+    'prefix': 'pdt'
+    'body': 'padding-top: ${1:${2:1}${3:px}};$0'
+  'padding-bottom:0;':
+    'prefix': 'pdb0'
+    'body': 'padding-bottom:0;$0'
+  'padding-left:0;':
+    'prefix': 'pdl0'
+    'body': 'padding-left:0;$0'
+  'padding-right0;':
+    'prefix': 'pdr0'
+    'body': 'padding-right:0;$0'
+  'padding-top0;':
+    'prefix': 'pdt0'
+    'body': 'padding-top:0;$0'
+  'position':
+    'prefix': 'pos'
+    'body': 'position: ${1:relative};$0'
+  'position absolute':
+    'prefix': 'abs'
+    'body': 'position: absolute;$0'
+  'position fixed':
+    'prefix': 'fixed'
+    'body': 'position: fixed;$0'
+  'position relative':
+    'prefix': 'rel'
+    'body': 'position: relative;$0'
+  'position static':
+    'prefix': 'static'
+    'body': 'position: static;$0'
+  'text-align: center':
+    'prefix': 'tac'
+    'body': 'text-align: center;$0'
+  'text-align: left':
+    'prefix': 'tal'
+    'body': 'text-align: left;$0'
+  'text-align: right':
+    'prefix': 'tar'
+    'body': 'text-align: right;$0'
+  'text-align: justify':
+    'prefix': 'taj'
+    'body': 'text-align: justify;$0'
+  'text-decoration: underline':
+    'prefix': 'tdu'
+    'body': 'text-decoration: underline;$0'
+  'text-decoration: none':
+    'prefix': 'tdn'
+    'body': 'text-decoration: none;$0'
+  'text-decoration: line-through':
+    'prefix': 'tdl'
+    'body': 'text-decoration: line-through;$0'
+  'text-transform':
+    'prefix': 'tt'
+    'body': 'text-transform: ${1:uppercase};$0'
+  'text-transform: capitalize':
+    'prefix': 'ttc'
+    'body': 'text-transform: ${1:capitalize};$0'
+  'text-transform: lowercase':
+    'prefix': 'ttl'
+    'body': 'text-transform: ${1:lowercase};$0'
+  'text-transform: none':
+    'prefix': 'ttn'
+    'body': 'text-transform: ${1:none};$0'
+  'text-transform: uppercase':
+    'prefix': 'ttu'
+    'body': 'text-transform: ${1:uppercase};$0'
+  'vertical-align':
+    'prefix': 'va'
+    'body': 'vertical-align: ${1:middle};$0'
+  'vertical-align: bottom':
+    'prefix': 'vb'
+    'body': 'vertical-align: bottom;$0'
+  'vertical-align: middle':
+    'prefix': 'vm'
+    'body': 'vertical-align: middle;$0'
+  'vertical-align: top':
+    'prefix': 'vt'
+    'body': 'vertical-align: top;$0'
+  'visibility: visible':
+    'prefix': 'vv'
+    'body': 'visibility: visible;$0'
+  'visibility: hidden':
+    'prefix': 'vh'
+    'body': 'visibility: hidden;$0'
+  'white-space':
+    'prefix': 'ws'
+    'body': 'white-space: ${1:nowrap};$0'
+  'white-space: nowrap':
+    'prefix': 'wsn'
+    'body': 'white-space: nowrap;$0'
+  'white-space: normal':
+    'prefix': 'wsnor'
+    'body': 'white-space: normal;$0'
+  'white-space: pre':
+    'prefix': 'wsp'
+    'body': 'white-space: pre;$0'
+  'width':
+    'prefix': 'w'
+    'body': 'width: ${1:${2:1}${3:px}};$0'
+  'width %':
+    'prefix': 'wp'
+    'body': 'width: ${1}%;$0'
+  'width: auto':
+    'prefix': 'wa'
+    'body': 'width: auto;$0'
+  'z-index':
+    'prefix': 'zi'
+    'body': 'z-index: ${1:1};$0'
+  'z-index':
+    'prefix': 'z'
+    'body': 'z-index: ${1:1};$0'
+
+'.source.css, .source.scss, .source.css.scss, .source.less, .source.css.less, .source.sass, .source.css.sass':
+  '!important':
+    'prefix': 'imp'
+    'body': '!important$0'
+  'Inline Comment 88':
+    'prefix': '88'
+    'body': '/* $1 */\n$0'
+  'Block Comment 8888':
+    'prefix': '8888'
+    'body': '/* \n$1 \n*/\n$0'
+  'Block Comment 888':
+    'prefix': '888'
+    'body': '/* \n$1 \n*/\n$0'
+  'Star *':
+    'prefix': 'star'
+    'body': '*{padding:0;margin:0;}'
+  'CF':
+    'prefix': 'cf'
+    'body': '.cf:before,.cf:after{content:"";display:table;}.cf:after{clear:both;}.cf{*zoom:1;}'
+  'html5block':
+    'prefix': 'cf'
+    'body': 'article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}'
+  'text-overflow:ellipsis;':
+    'prefix': 'toe'
+    'body': 'text-overflow:ellipsis;'
+  'trbl':
+    'prefix': 'trbl'
+    'body': 'top:$1px;right:px;bottom:px;left:px;'
+  'tlf':
+    'prefix': 'tlf'
+    'body': 'table-layout:fixed;'
+  'trans':
+    'prefix': 'trans'
+    'body': 'a{transition:all .20s ease-in-out;background:#ff0;}\na:hover{background:#f00;}\n'
+  'reset':
+    'prefix': 'reset'
+    'body': '/*reset v2012.01.04*/\nbody,h1,h2,h3,h4,h5,h6,dl,dd,figure,p,pre,blockquote,col,colgroup{margin:0;}\nmenu,form,fieldset,input,textarea,button,select,legend,th,td{padding:0;margin:0;}\nul,ol{list-style-type:none;margin:0;padding:0;} \nfieldset,img{border:0;} \ntable{border-collapse:collapse;border-spacing:0;}\narticle,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}\nh1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%;}\ni,u,b,s{font-weight:normal;font-style:normal;text-decoration:none;}\nhtml,body{height:100%;}\n/* should be put into layout.css \nbody,button,input,select,textarea{font:12px/1.5 arial,\'\5b8b\4f53\';}\ninput,select,textarea{font-size:100%;}\ntextarea{overflow:auto;}\nbody{background:#fff;line-height:1.5;} \n*/\n/* cf */\n.cf:before,.cf:after{content:"";display:table;}\n.cf:after{clear:both;}\n.cf{*zoom:1;}\n/* fixed */\niframe{display:block;}\n/* util class */\n.fll{float:left;display:inline;}\n.flr{float:right;display:inline;}\n.fln {float:none;}\n.tac{text-align:center;}\n.tar{text-align:right;}\n.tal{text-align:left;}\n.vm{vertical-align:middle;}\n.vt{vertical-align:top;}\n.dn{display:none;}\n.db{display:block;}\n.din{display:inline;}\n.dinb{display:inline-block;}\n.ie6 .dinb,.ie7 .dinb{display:inline;}\n/*\nkeygen{margin:0;padding:0;}\nth{text-align:inherit;}\naddress,var,dfn,em,cite{font-style:italic;}\nstrong{font-weight:bold;}\ncaption,th{text-align:left;font-weight:normal;font-style:normal;} \ncode{font-family:monospace;}\nabbr,acronym{border:0;font-variant:normal;}\nq:before,q:after{content:\'\';}\nsup{vertical-align:text-top;}\nsub{vertical-align:text-bottom;}\na:link,a:visited,a:hover,a:active{}\nhtml,body{height:100%;}\n*/'
