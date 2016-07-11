@@ -1,13 +1,13 @@
 ".source.js":
   "setTimeout":
-    prefix: "st"
+    prefix: "sett"
     body: """
     setTimeout(() => {
     \t${0}
     }, ${1:delay});
     """
   "setInterval":
-    prefix: "si"
+    prefix: "seti"
     body: """
     setInterval(() => {
     \t${0}
