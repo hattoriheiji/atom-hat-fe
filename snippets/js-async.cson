@@ -1,4 +1,19 @@
 ".source.js":
+  "XHR":
+    prefix: "XHR"
+    body: "XMLHttpRequest"
+  "new XMLHttpRequest();":
+    prefix: "XHR2"
+    body: "new XMLHttpRequest();"
+  "AXO":
+    prefix: "AXO"
+    body: "new ActiveXObject(\"Microsoft.XMLHTTP\");"
+  'ready4':
+    prefix: 'ready4'
+    body: 'if (xhr.readyState == 4) {\n\tif (xhr.status == 200) {\n\t\tvar outMsg = xhr.responseText;\n\t}else {\n\t\tvar outMsg = "There was a problem with the request " + xhr.status;\n\t}\n\tdocument.getElementById("updateArea").innerHTML = outMsg;\n}'
+  "onreadystatechange":
+    prefix: "onready"
+    body: "onreadystatechange"
   "Node callback":
     prefix: "cb"
     body: "(err, ${1:value}) => {${0}}"

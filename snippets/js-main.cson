@@ -1,0 +1,16 @@
+".source.js":
+  "Inline Comment":
+    prefix: "88"
+    body: "/* $1 */$0"
+  "Block Comment":
+    prefix: "888"
+    body: "/*\n$1\n*/$0"
+  "Block Comment2":
+    prefix: "88"
+    body: "/*\n$1\n*/$0"
+  "33":
+    prefix: "33"
+    body: "$1 ? true : false;"
+  "33-2":
+    prefix: "333"
+    body: "($1) ? true : false;"

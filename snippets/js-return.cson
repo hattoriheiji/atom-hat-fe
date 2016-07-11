@@ -11,8 +11,14 @@
   "return true":
     prefix: "rt"
     body: "return true;"
+  "return true 2":
+    prefix: "rt"
+    body: "return true;"
   "return false":
     prefix: "rf"
+    body: "return false;"
+  "return false 2":
+    prefix: "rtf"
     body: "return false;"
   "return 0":
     prefix: "r0"
