@@ -1,7 +1,7 @@
 ".source.js":
   "$('[data-hid]')":
     prefix: "sd"
-    body: "$('[data-hid="$1"]').$0"
+    body: "$('[data-hid=\"$1\"]').$0"
   "$('#id')":
     prefix: "sid"
     body: "$('#$1').$0"
@@ -57,69 +57,68 @@
     prefix: "rd"
     body: """
     $(function(){
-    \n\t$1
-    \n});
+    \t$1
+    });
     """
   "jq$":
     prefix: "jq$"
     body: """
     jQuery.noConflict(); 
-    \n(function($){ 
-    \n\t$(function(){ 
-    \n\t\t $1
-    \n\t});
-    \n})(jQuery);
+    (function($){ 
+    \t$(function(){ 
+    \t\t $1
+    \t});
+    })(jQuery);
     """
   "jqs":
     prefix: "jqs"
     body: """
     jQuery.noConflict(); 
-    \n(function($){ 
-    \n\t$(function(){ 
-    \n\t\t $1
-    \n\t});
-    \n})(jQuery);
+    (function($){ 
+    \t$(function(){ 
+    \t\t$1
+    \t});
+    })(jQuery);
     """
   "jqclick":
     prefix: "jqclick"
     body: """
     click(function(){
-    \n\t$1
-    \n});
+    \t$1
+    });
     """
   "jqclick 2":
     prefix: "jqc"
     body: """
     click(function(){
-    \n\t$1
-    \n});
+    \t$1
+    });
     """
   "aja":
     prefix: "aja"
     body: """
     $.ajax({
-    \n\turl: \'\',
-    \n\tdata:\'\',
-    \n\ttype:\'POST\'
-    \n}).done(function(r){
-    \n
-    \n}).fail(function(r){
-    \n
-    \n);
-    \n
+    \turl: \'\',
+    \tdata:\'\',
+    \ttype:\'POST\'
+    }).done(function(r){
+    
+    }).fail(function(r){
+    
+    );
     """
   "jqplugin":
     prefix: "jqplugin"
     body: """
     (function($){
-    \n\t$.fn.pluginName = function (options) {
-    \n\t\tvar defaults = {
-    \n
-    \n\t\t};
-    \n\t\toptions = $.extend(defaults, options);
-    \n\t\treturn this.each(function () {
-    \n\t\t\tvar obj = $(this);
-    \n\t\t});
-    \n\t};
-    \n})(jQuery);
+    \t$.fn.pluginName = function (options) {
+    \t\tvar defaults = {
+    
+    \t\t};
+    \t\toptions = $.extend(defaults, options);
+    \t\treturn this.each(function () {
+    \t\t\tvar obj = $(this);
+    \t\t});
+    \t};
+    })(jQuery);
     """

@@ -20,33 +20,33 @@
     prefix: "func"
     body: """
     (function(){
-    \n\t$1
+    \t$1
     })();
     """
   "afu":
     prefix: "afu"
     body: """
     (function(){
-    \n\t$1
-    \n})();
+    \t$1
+    })();
     """
   "afu2":
     prefix: "afu2"
     body: """
     (function(_i){
-    \n\tz_li[_i].onclick = function () {
-    \n\t\talert(_i);
-    \n\t}
-    \n})(i);
+    \tz_li[_i].onclick = function () {
+    \t\talert(_i);
+    \t}
+    })(i);
     """
   "afuclosure":
     prefix: "afuclosure"
     body: """
     (function(_i){
-    \n\tz_li[_i].onclick = function () {
-    \n\t\talert(_i);
-    \n\t}
-    \n})(i);
+    \tz_li[_i].onclick = function () {
+    \t\talert(_i);
+    \t}
+    })(i);
     """
   "immediately-invoked function expression":
     prefix: "iife"

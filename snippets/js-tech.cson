@@ -13,43 +13,43 @@
     prefix: "vued"
     body: """
     Vue.directive(\'^!\', {
-    \n
-    \n});
+    
+    });
     """
   "vinit":
     prefix: "vinit"
     body: """
     new Vue({
-    \n\tel: \'#element\',
-    \n\tdata: {
-    \n\t\tv-modal: \'\',
-    \n\t\t
-    \n\t},
-    \n\tmethods: {
-    \n\t\tmethod1: function(){
-    \n\t\t},
-    \n
-    \n\t\tmethod2: function(index){
-    \n\t\n\t\t}\t
-    \n\t}
-    \n});
+    \tel: \'#element\',
+    \tdata: {
+    \t\tv-modal: \'\',
+    \t\t
+    \t},
+    \tmethods: {
+    \t\tmethod1: function(){
+    \t\t},
+    
+    \t\tmethod2: function(index){
+    \t\t\t}\t
+    \t}
+    });
     """
   "vueinit":
     prefix: "vueinit"
     body: """
     new Vue({
-    \n\tel: \'#element\',
-    \n\tdata: {
-    \n\t\tv-modal: \'\',
-    \n\t\t
-    \n\t},
-    \n\tmethods: {
-    \n\t\tmethod1: function(){
-    \n\t\t},
-    \n
-    \n\t\tmethod2: function(index){
-    \n\t\n\t\t}\t
-    \n\t}
-    \n});
+    \tel: \'#element\',
+    \tdata: {
+    \t\tv-modal: \'\',
+    \t\t
+    \t},
+    \tmethods: {
+    \t\tmethod1: function(){
+    \t\t},
+    
+    \t\tmethod2: function(index){
+    \t\t\t}\t
+    \t}
+    });
     """
 

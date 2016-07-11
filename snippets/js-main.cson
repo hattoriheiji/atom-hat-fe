@@ -6,7 +6,7 @@
     prefix: "888"
     body: "/*\n$1\n*/$0"
   "Block Comment2":
-    prefix: "88"
+    prefix: "8888"
     body: "/*\n$1\n*/$0"
   "33":
     prefix: "33"

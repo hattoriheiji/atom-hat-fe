@@ -17,22 +17,22 @@
     prefix: "for"
     body: """
     for (var i = 0; i < $1.length; i++) {
-    \n\t$0
-    \n}
+    \t$0
+    }
     """
   "for loop j":
     prefix: "for"
     body: """
     for (var j = 0; j < $1.length; j++) {
-    \n\t$0
-    \n}
+    \t$0
+    }
     """
   "for loop k":
     prefix: "for"
     body: """
     for (var k = 0; k < $1.length; k++) {
-    \n\t$0
-    \n}
+    \t$0
+    }
     """
   "for in loop":
     prefix: "fi"
@@ -47,8 +47,8 @@
     prefix: "forin"
     body: """
     for (var item in myArray){
-    \n\t$1\t
-    \n}
+    \t$1\t
+    }
     """
   "for of loop":
     prefix: "fo"
@@ -68,15 +68,15 @@
     prefix: "switch"
     body: """
     switch ($1) {
-    \n\tcase label :
-    \n\t\tstatement;
-    \n\t\tbreak;
-    \n\tcase label :
-    \n\t\tstatement;
-    \n\t\tbreak;
-    \n\tdefault :
-    \n\t\tstatement;
-    \n}
+    \tcase label :
+    \t\tstatement;
+    \t\tbreak;
+    \tcase label :
+    \t\tstatement;
+    \t\tbreak;
+    \tdefault :
+    \t\tstatement;
+    }
     """
   "try/catch":
     prefix: "tc"
