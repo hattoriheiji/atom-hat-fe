@@ -1,5 +1,8 @@
 '.source.css, .source.scss, .source.css.scss, .source.less, .source.css.less':
   'background':
+    'prefix': 'b1'
+    'body': 'background: ${1:#${2:ffffff}};$0'
+  'background #':
     'prefix': 'b'
     'body': 'background: ${1:#${2:ffffff}};$0'
   'background img':
@@ -55,7 +58,7 @@
     'body': 'border-style: ${3:solid};$0'
   'border-width':
     'prefix': 'borw'
-    'body': 'border-width: ${1:${2:1}${3:px}};$0'
+    'body': 'border-width: $1px;$0'
   'border-bottom':
     'prefix': 'bdb'
     'body': 'border-bottom: ${1:${2:1}${3:px}} ${3:solid} ${4:#${5:000}};$0'
@@ -82,7 +85,7 @@
     'body': 'border-top:0 none;'
   'border-radius':
     'prefix': 'bdrd'
-    'body': 'border-radius: ${1:${2:1}${3:px}};$0'
+    'body': 'border-radius: $1px;$0'
   'border-collapse':
     'prefix': 'bc'
     'body': 'border-collapse:collapse;$0'
@@ -154,7 +157,7 @@
     'body': 'font-family: ${1:arial};$0'
   'font-size':
     'prefix': 'fs'
-    'body': 'font-size: ${1:${2:1}${3:px}};$0'
+    'body': 'font-size: $1px;$0'
   'font-size:12px;':
     'prefix': 'fs12'
     'body': 'font-size: 12px;$0'
@@ -193,7 +196,7 @@
     'body': 'font-weight: normal;$0'
   'height':
     'prefix': 'h'
-    'body': 'height: ${1:${2:1}${3:px}};$0'
+    'body': 'height: $1px;$0'
   'height %':
     'prefix': 'hp'
     'body': 'height: ${1}%;$0'
@@ -235,7 +238,7 @@
     'body': 'line-height: ${1:${2:1}${3:em}};$0'
   'letter-spacing':
     'prefix': 'lsp'
-    'body': 'letter-spacing: ${1:${2:1}${3:px}};$0'
+    'body': 'letter-spacing: $1px;$0'
   'letter-spacing: normal':
     'prefix': 'lsn'
     'body': 'letter-spacing: normal;$0'
@@ -250,7 +253,7 @@
     'body': 'a:hover{$1}$0'
   'margin':
     'prefix': 'mg'
-    'body': 'margin: ${1:${2:1}${3:px}};$0'
+    'body': 'margin: $1px;$0'
   'margin:auto;':
     'prefix': 'mga'
     'body': 'margin: auto;$0'
@@ -262,16 +265,16 @@
     'body': 'margin: 0;$0'
   'margin-bottom':
     'prefix': 'mgb'
-    'body': 'margin-bottom: ${1:${2:1}${3:px}};$0'
+    'body': 'margin-bottom: $1px;$0'
   'margin-left':
     'prefix': 'mgl'
-    'body': 'margin-left: ${1:${2:1}${3:px}};$0'
+    'body': 'margin-left: $1px;$0'
   'margin-right':
     'prefix': 'mgr'
-    'body': 'margin-right: ${1:${2:1}${3:px}};$0'
+    'body': 'margin-right: $1px;$0'
   'margin-top':
     'prefix': 'mgt'
-    'body': 'margin-top: ${1:${2:1}${3:px}};$0'
+    'body': 'margin-top:  $1px;$0'
   'margin-bottom:0;':
     'prefix': 'mgb0'
     'body': 'margin-bottom:0;$0'
@@ -286,10 +289,10 @@
     'body': 'margin-top:0;$0'
   'min-height':
     'prefix': 'mh'
-    'body': 'min-height: ${1:${2:1}${3:px}};$0'
+    'body': 'min-height:  $1px;$0'
   'min-width':
     'prefix': 'mw'
-    'body': 'min-width: ${1:${2:1}${3:px}};$0'
+    'body': 'min-width:  $1px;$0'
   'overflow':
     'prefix': 'ov'
     'body': 'overflow: ${1:hidden};$0'
@@ -310,19 +313,19 @@
     'body': 'overflow: visible;$0'
   'padding':
     'prefix': 'pd'
-    'body': 'padding: ${1:${2:1}${3:px}};$0'
+    'body': 'padding:  $1px;$0'
   'padding-bottom':
     'prefix': 'pdb'
-    'body': 'padding-bottom: ${1:${2:1}${3:px}};$0'
+    'body': 'padding-bottom: $1px;$0'
   'padding-left':
     'prefix': 'pdl'
-    'body': 'padding-left: ${1:${2:1}${3:px}};$0'
+    'body': 'padding-left: $1px;$0'
   'padding-right':
     'prefix': 'pdr'
-    'body': 'padding-right: ${1:${2:1}${3:px}};$0'
+    'body': 'padding-right: $1px;$0'
   'padding-top':
     'prefix': 'pdt'
-    'body': 'padding-top: ${1:${2:1}${3:px}};$0'
+    'body': 'padding-top: $1px;$0'
   'padding-bottom:0;':
     'prefix': 'pdb0'
     'body': 'padding-bottom:0;$0'
@@ -386,9 +389,6 @@
   'text-transform: uppercase':
     'prefix': 'ttu'
     'body': 'text-transform: ${1:uppercase};$0'
-  'vertical-align':
-    'prefix': 'va'
-    'body': 'vertical-align: ${1:middle};$0'
   'vertical-align: bottom':
     'prefix': 'vb'
     'body': 'vertical-align: bottom;$0'
@@ -404,9 +404,6 @@
   'visibility: hidden':
     'prefix': 'vh'
     'body': 'visibility: hidden;$0'
-  'white-space':
-    'prefix': 'ws'
-    'body': 'white-space: ${1:nowrap};$0'
   'white-space: nowrap':
     'prefix': 'wsn'
     'body': 'white-space: nowrap;$0'
@@ -418,19 +415,19 @@
     'body': 'white-space: pre;$0'
   'width':
     'prefix': 'w'
-    'body': 'width: ${1:${2:1}${3:px}};$0'
+    'body': 'width: $1px;$0'
   'width %':
     'prefix': 'wp'
-    'body': 'width: ${1}%;$0'
+    'body': 'width: $1%;$0'
   'width: auto':
     'prefix': 'wa'
     'body': 'width: auto;$0'
   'z-index':
     'prefix': 'zi'
-    'body': 'z-index: ${1:1};$0'
+    'body': 'z-index: $1;$0'
   'z-index':
     'prefix': 'z'
-    'body': 'z-index: ${1:1};$0'
+    'body': 'z-index: $1;$0'
 
 '.source.css, .source.scss, .source.css.scss, .source.less, .source.css.less, .source.sass, .source.css.sass':
   '!important':
@@ -468,4 +465,4 @@
     'body': 'a{transition:all .20s ease-in-out;background:#ff0;}\na:hover{background:#f00;}\n'
   'reset':
     'prefix': 'reset'
-    'body': '/*reset v2012.01.04*/\nbody,h1,h2,h3,h4,h5,h6,dl,dd,figure,p,pre,blockquote,col,colgroup{margin:0;}\nmenu,form,fieldset,input,textarea,button,select,legend,th,td{padding:0;margin:0;}\nul,ol{list-style-type:none;margin:0;padding:0;} \nfieldset,img{border:0;} \ntable{border-collapse:collapse;border-spacing:0;}\narticle,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}\nh1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%;}\ni,u,b,s{font-weight:normal;font-style:normal;text-decoration:none;}\nhtml,body{height:100%;}\n/* should be put into layout.css \nbody,button,input,select,textarea{font:12px/1.5 arial,\'\5b8b\4f53\';}\ninput,select,textarea{font-size:100%;}\ntextarea{overflow:auto;}\nbody{background:#fff;line-height:1.5;} \n*/\n/* cf */\n.cf:before,.cf:after{content:"";display:table;}\n.cf:after{clear:both;}\n.cf{*zoom:1;}\n/* fixed */\niframe{display:block;}\n/* util class */\n.fll{float:left;display:inline;}\n.flr{float:right;display:inline;}\n.fln {float:none;}\n.tac{text-align:center;}\n.tar{text-align:right;}\n.tal{text-align:left;}\n.vm{vertical-align:middle;}\n.vt{vertical-align:top;}\n.dn{display:none;}\n.db{display:block;}\n.din{display:inline;}\n.dinb{display:inline-block;}\n.ie6 .dinb,.ie7 .dinb{display:inline;}\n/*\nkeygen{margin:0;padding:0;}\nth{text-align:inherit;}\naddress,var,dfn,em,cite{font-style:italic;}\nstrong{font-weight:bold;}\ncaption,th{text-align:left;font-weight:normal;font-style:normal;} \ncode{font-family:monospace;}\nabbr,acronym{border:0;font-variant:normal;}\nq:before,q:after{content:\'\';}\nsup{vertical-align:text-top;}\nsub{vertical-align:text-bottom;}\na:link,a:visited,a:hover,a:active{}\nhtml,body{height:100%;}\n*/'
+    'body': '/*reset v2012.01.04*/\nbody,h1,h2,h3,h4,h5,h6,dl,dd,figure,p,pre,blockquote,col,colgroup{margin:0;}\nmenu,form,fieldset,input,textarea,button,select,legend,th,td{padding:0;margin:0;}\nul,ol{list-style-type:none;margin:0;padding:0;} \nfieldset,img{border:0;} \ntable{border-collapse:collapse;border-spacing:0;}\narticle,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}\nh1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%;}\ni,u,b,s{font-weight:normal;font-style:normal;text-decoration:none;}\nhtml,body{height:100%;}\n/* should be put into layout.css \nbody,button,input,select,textarea{font:12px/1.5 arial;}\ninput,select,textarea{font-size:100%;}\ntextarea{overflow:auto;}\nbody{background:#fff;line-height:1.5;} \n*/\n/* cf */\n.cf:before,.cf:after{content:"";display:table;}\n.cf:after{clear:both;}\n.cf{*zoom:1;}\n/* fixed */\niframe{display:block;}\n/* util class */\n.fll{float:left;display:inline;}\n.flr{float:right;display:inline;}\n.fln {float:none;}\n.tac{text-align:center;}\n.tar{text-align:right;}\n.tal{text-align:left;}\n.vm{vertical-align:middle;}\n.vt{vertical-align:top;}\n.dn{display:none;}\n.db{display:block;}\n.din{display:inline;}\n.dinb{display:inline-block;}\n.ie6 .dinb,.ie7 .dinb{display:inline;}\n/*\nkeygen{margin:0;padding:0;}\nth{text-align:inherit;}\naddress,var,dfn,em,cite{font-style:italic;}\nstrong{font-weight:bold;}\ncaption,th{text-align:left;font-weight:normal;font-style:normal;} \ncode{font-family:monospace;}\nabbr,acronym{border:0;font-variant:normal;}\nq:before,q:after{content:\'\';}\nsup{vertical-align:text-top;}\nsub{vertical-align:text-bottom;}\na:link,a:visited,a:hover,a:active{}\nhtml,body{height:100%;}\n*/'
