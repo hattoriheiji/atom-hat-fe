@@ -107,6 +107,33 @@
     
     );
     """
+  "ajaxSetup":
+    prefix: "ajas"
+    body: """
+    $.ajaxSetup({
+    \ttimeout: 3000,
+    \tfail: function(xhr, status, e){
+    \t\tafterLoading();
+    \t\tconsole.log(xhr,status);
+    \t\talert(\'fffailll\');
+    \t},
+    \terror: function(xhr, status, e){
+    \t\tafterLoading();
+    \t\tconsole.log(xhr,status);
+    \t\tif(status == "timeout"){
+    \t\t\talert("加载超时，请重试");
+    \t\t}else{
+    \t\t\t}
+    \t},
+    \tbeforeSend: function (xhr){
+    \t\tloading();
+    \t},
+    \tcomplete: function(){
+    \t\tafterLoading();
+    \t}
+    });
+    """
+
   "jqplugin":
     prefix: "jqplugin"
     body: """

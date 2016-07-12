@@ -184,7 +184,7 @@
     'body': 'font-style: bold;$0'
   'font-weight':
     'prefix': 'fw'
-    'body': 'font-weight: ${1:bold};$0'
+    'body': 'font-weight: bold;$0'
   'font-weight: bold':
     'prefix': 'fwb'
     'body': 'font-weight: bold;$0'
@@ -425,7 +425,7 @@
   'z-index':
     'prefix': 'zi'
     'body': 'z-index: $1;$0'
-  'z-index':
+  'z-index2':
     'prefix': 'z'
     'body': 'z-index: $1;$0'
 
@@ -456,7 +456,7 @@
     'body': 'text-overflow:ellipsis;'
   'trbl':
     'prefix': 'trbl'
-    'body': 'top:$1px;right:px;bottom:px;left:px;'
+    'body': 'top:$1px;right:$2px;bottom:$3px;left:$4px;'
   'tlf':
     'prefix': 'tlf'
     'body': 'table-layout:fixed;'
