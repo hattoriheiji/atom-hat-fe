@@ -16,7 +16,7 @@
     body: "Object"
   "object":
     prefix: "ob"
-    body: "ob"
+    body: "object"
   "Array":
     prefix: "A"
     body: "Array"

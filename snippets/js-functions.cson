@@ -1,19 +1,40 @@
 ".source.js":
   "anonymous function":
-    prefix: "f"
+    prefix: "f0"
     body: "(${1:args}) => {${0}}"
+  "callback noname function f":
+    prefix: "f"
+    body: """
+    function () {
+    \t$0
+    }
+    """
+  "callback noname function f 2":
+    prefix: "f1"
+    body: """
+    function () {
+    \t$0
+    }
+    """
   "callback noname function":
     prefix: "fun"
     body: """
     function () {
-    \t${0}
+    \t$0
     }
     """
-  "named function":
+  "callback noname function 2":
     prefix: "fu"
     body: """
+    function() {
+    \t$0
+    }
+    """
+  "named function 2":
+    prefix: "f2"
+    body: """
     function $1() {
-    \t${0}
+    \t$0
     }
     """
   "afu3":

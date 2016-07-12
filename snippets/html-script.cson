@@ -33,7 +33,7 @@
 
   'tag:script':
     'prefix': 'script'
-    'body': '<script>\n\t${0}</script>'
+    'body': '<script>\n\t$0\n</script>'
   
   'tag:script:ready':
     'prefix': 'rd2'
@@ -41,7 +41,7 @@
 
   'tag:script src':
     'prefix': 'scriptsrc'
-    'body': '<script src="${0}"></script>'
+    'body': '<script src="$1"></script>$0'
 
   'tag:flash':
     'prefix': 'flash'
