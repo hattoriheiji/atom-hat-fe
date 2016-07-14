@@ -1,0 +1,22 @@
+".source.js":
+  "Node require http":
+    prefix: "http"
+    body: "var http = require('http');"
+  "Node require querystring":
+    prefix: "querys"
+    body: "var querystring = require('querystring');"
+  "Node require cheerio":
+    prefix: "cheerio"
+    body: "var http = require('cheerio');"
+  "Node require emit":
+    prefix: "emit"
+    body: "var EventEmitter = require('events').EventEmitter;"
+  "Node cheerio define":
+    prefix: "cheerios"
+    body: "var $ = cheerio.load(html);"
+  "Node http get":
+    prefix: "httpget"
+    body: "http.get(url, function(res) {\n\tvar html = \'\';\n\tres.on(\'data\', function(data) {\n\t\thtml += data;\n\t})\n\tres.on(\'end\', function() {\n\t\tvar courseData = filterChapters(html);\n\t\tprintCourseInfo(courseData);\n\t})\n}).on(\'error\', function() {\n\tconsole.log(\'获取课程数据失败！\')\n})"
+  "Node create":
+    prefix: "create"
+    body: "var http = require(\'http\');\n\nhttp.createServer(function(request, response) {\n  var headers = request.headers;\n  var method = request.method;\n  var url = request.url;\n  var body = [];\n  request.on(\'error\', function(err) {\n\tconsole.error(err);\n  }).on(\'data\', function(chunk) {\n\tbody.push(chunk);\n  }).on(\'end\', function() {\n\tbody = Buffer.concat(body).toString();\n  });\n}).listen(8080);"
